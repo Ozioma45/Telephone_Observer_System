@@ -23,3 +23,8 @@ class Telephone {
 
   DialPhoneNumber() {}
 }
+
+class Observer {
+  constructor() {}
+  update() {}
+}
