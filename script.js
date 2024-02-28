@@ -57,3 +57,13 @@ const observer2 = new SpecialObserver();
 
 telephone.addObserver(observer1);
 telephone.addObserver(observer2);
+
+telephone.addPhoneNumber("1234567890");
+telephone.dialPhoneNumber("1234567890");
+// Output:
+// Phone number dialed: 1234567890
+// Now Dialling 1234567890
+
+telephone.removePhoneNumber("1234567890");
+telephone.dialPhoneNumber("1234567890");
+// Output: Phone number not found.
