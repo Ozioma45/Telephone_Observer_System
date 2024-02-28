@@ -50,3 +50,10 @@ class SpecialObserver {
     console.log(`Now Dialling ${number}`);
   }
 }
+
+const telephone = new Telephone();
+const observer1 = new Observer();
+const observer2 = new SpecialObserver();
+
+telephone.addObserver(observer1);
+telephone.addObserver(observer2);
