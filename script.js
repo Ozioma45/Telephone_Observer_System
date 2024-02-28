@@ -1,27 +1,42 @@
 class Telephone {
   constructor() {
-    this.observers = new Set();
+    this.phoneNumbers = [];
+    this.observers = [];
   }
 
-  add(observer) {
-    this.observers.add(observer);
+  addObserver(observer) {
+    this.observers.push(observer);
   }
 
-  remove(observer) {
-    this.observers.delete(observer);
-  }
-
-  notify(context) {
-    for (let observer of this.observers) {
-      observer.update(context);
+  removeObserver(observer) {
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) {
+      this.observers.splice(index, 1);
     }
   }
 
-  AddPhoneNumber() {}
+  notifyObserver(number) {
+    this.observers.forEach((observer) => observer.update(number));
+  }
 
-  RemovePhoneNumber() {}
+  addPhoneNumber(number) {
+    this.phoneNumbers.push(number);
+  }
 
-  DialPhoneNumber() {}
+  removePhoneNumber(number) {
+    const index = this.phoneNumbers.indexOf(number);
+    if (index !== -1) {
+      this.phoneNumbers.splice(index, 1);
+    }
+  }
+
+  dialPhoneNumber(number) {
+    if (this.phoneNumbers.includes(number)) {
+      this.notifyObservers(number);
+    } else {
+      console.log("Phone number not found.");
+    }
+  }
 }
 
 class Observer {
