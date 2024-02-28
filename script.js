@@ -27,12 +27,23 @@ class Telephone {
     const index = this.phoneNumbers.indexOf(number);
     if (index !== -1) {
       this.phoneNumbers.splice(index, 1);
+    } else {
+      console.log("Phone number not found.");
+    }
+  }
+
+  removePhoneNumber(number) {
+    const index = this.phoneNumbers.indexOf(number);
+    if (index !== -1) {
+      this.phoneNumbers.splice(index, 1);
+    } else {
+      console.log("Phone number not found.");
     }
   }
 
   dialPhoneNumber(number) {
     if (this.phoneNumbers.includes(number)) {
-      this.notifyObservers(number);
+      this.notifyObserver(number);
     } else {
       console.log("Phone number not found.");
     }
