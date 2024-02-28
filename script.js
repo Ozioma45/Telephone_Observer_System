@@ -40,6 +40,13 @@ class Telephone {
 }
 
 class Observer {
-  constructor() {}
-  update() {}
+  update(number) {
+    console.log(`Phone number dialed: ${number}`);
+  }
+}
+
+class SpecialObserver {
+  update(number) {
+    console.log(`Now Dialling ${number}`);
+  }
 }
