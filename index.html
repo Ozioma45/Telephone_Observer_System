@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telephone Package</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Telephone Package Interface</h1>
+    <div>
+      <h2>Add Phone Number</h2>
+      <input
+        type="text"
+        id="phoneNumberInput"
+        placeholder="Enter Phone Number" />
+      <button onclick="addPhoneNumber()">Add Number</button>
+    </div>
+    <div>
+      <h2>Add Observer</h2>
+      <input type="text" id="observerInput" placeholder="Enter Observer Name" />
+      <button onclick="addObserver()">Add Observer</button>
+    </div>
+    <div>
+      <h2>Phone Numbers</h2>
+      <table id="phoneNumbersTable">
+        <thead>
+          <tr>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Phone numbers will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Observers</h2>
+      <table id="observersTable">
+        <thead>
+          <tr>
+            <th>Observer Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Observers will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <button onclick="dialPhoneNumber()">Dial Phone Number</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
