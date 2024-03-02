@@ -1,46 +1,40 @@
-# Telephone Package
+# Telephone_Observer_System
 
-This project is part of the Learnable Internship Program by GenesysTechHub (https://learnable.genesystechhub.com/), aimed at implementing and understanding design patterns, specifically the Observer Pattern.
-
-## Overview
-
-The Telephone Package is a JavaScript implementation of a telephone system with features like adding phone numbers, removing phone numbers, and dialing phone numbers. It also utilizes the Observer Pattern to notify observers whenever a phone number is dialed. This project serves as a practical exercise to learn and implement design patterns in real-world scenarios.
+This project is a demonstration of implementing the observer design pattern in a telephone package. It allows users to interact with a telephone system through various functionalities such as adding, removing, and dialing phone numbers. Additionally, it maintains a list of observers that are notified whenever a phone number is dialed.
 
 ## Features
 
 - **AddPhoneNumber**: Add a new phone number to the telephone system.
-- **RemovePhoneNumber**: Remove an existing phone number from the telephone system.
-- **DialPhoneNumber**: Dial a phone number from the existing list of phone numbers. Only phone numbers that have been added can be dialed.
-- **Observer Pattern**: Utilizes the Observer Pattern to notify observers whenever a phone number is dialed.
-  - Two types of observers are included:
-    1. The first observer prints the dialed phone number.
-    2. The second observer prints a special message along with the dialed phone number.
+- **RemovePhoneNumber**: Remove a phone number from the telephone system.
+- **DialPhoneNumber**: Dial a phone number from the list of added numbers.
+- **Observer Pattern**: Maintain a list of observers and notify them when a phone number is dialed.
+
+## Installation
+
+To use this telephone package, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/yourusername/telephone-package.git`
+2. Navigate to the project directory: `cd telephone-package`
+3. Open the `index.html` file in your web browser.
 
 ## Usage
 
-To use this package, follow these steps:
+Once the project is set up, you can perform the following actions:
 
-1. Install Node.js if not already installed.
-2. Clone this repository to your local machine.
-3. Navigate to the project directory.
-4. Run `node main.js` to execute the code.
-5. Check the console output for the results of adding, dialing, and removing phone numbers.
+- **Adding Phone Numbers**: Enter a phone number in the input field and click the "Add Number" button.
+- **Removing Phone Numbers**: Click the "Delete" button next to a phone number to remove it from the list.
+- **Dialing Phone Numbers**: Click the "Dial" button next to a phone number to dial it.
+- **Adding Observers**: Enter an observer name in the input field and click the "Add Observer" button.
+- **Removing Observers**: Click the "Delete" button next to an observer to remove it from the list.
 
-## Code Structure
+## Contributing
 
-- **`Telephone` Class**: Defines the telephone system with methods to add, remove, and dial phone numbers, along with observer management.
-- **`Observer` Class**: Represents a generic observer with an update method.
-- **`SpecialObserver` Class**: Represents a special type of observer with a custom update method.
-- **`main.js`**: Entry point of the program where instances of classes are created and methods are called.
+Contributions to this project are welcome! Feel free to fork the repository, make changes, and submit pull requests.
 
-## Getting Started
+## Credits
 
-To get started with this project, simply clone the repository and explore the code. You can also experiment with adding more functionality or extending the project according to your requirements.
-
-## Acknowledgements
-
-This project was developed as part of the Learnable Internship Program by GenesysTechHub. Special thanks to the mentors and instructors for their guidance and support throughout the program.
+This project was created as part of the Design Patterns topic at the Learnable internship program by Genesys Tech Hub (https://learnable.genesystechhub.com/).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
