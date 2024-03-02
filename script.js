@@ -1,4 +1,4 @@
-import { Telephone, Observer, SpecialObserver } from "./main1.js";
+import { Telephone, Observer, SpecialObserver } from "./main.js";
 
 const addObserver = document.getElementById("addObserver");
 
