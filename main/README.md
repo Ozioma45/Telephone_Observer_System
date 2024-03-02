@@ -1,45 +1,53 @@
-# Telephone Package
+# Telephone_Observer_System (Console Application)
 
-This project is part of the Learnable Internship Program by GenesysTechHub (https://learnable.genesystechhub.com/), aimed at implementing and understanding design patterns, specifically the Observer Pattern.
+This project is a console application focused on implementing the observer pattern within a telephone system. It allows users to add, remove, and dial phone numbers while notifying registered observers whenever a phone number is dialed.
 
-## Overview
+## Description
 
-The Telephone Package is a JavaScript implementation of a telephone system with features like adding phone numbers, removing phone numbers, and dialing phone numbers. It also utilizes the Observer Pattern to notify observers whenever a phone number is dialed. This project serves as a practical exercise to learn and implement design patterns in real-world scenarios.
+The console application comprises the following classes:
 
-## Features
+- `Telephone`: Represents a telephone system with methods to manage phone numbers and observers.
+- `Observer`: Represents a basic observer that prints the dialed phone number.
+- `SpecialObserver`: Represents a specialized observer that prints a custom message whenever a phone number is dialed.
 
-- **AddPhoneNumber**: Add a new phone number to the telephone system.
-- **RemovePhoneNumber**: Remove an existing phone number from the telephone system.
-- **DialPhoneNumber**: Dial a phone number from the existing list of phone numbers. Only phone numbers that have been added can be dialed.
-- **Observer Pattern**: Utilizes the Observer Pattern to notify observers whenever a phone number is dialed.
-  - Two types of observers are included:
-    1. The first observer prints the dialed phone number.
-    2. The second observer prints a special message along with the dialed phone number.
+The `Telephone` class maintains a list of observers and notifies them whenever a phone number is dialed using the observer pattern.
 
 ## Usage
 
-To use this package, follow these steps:
+1. **Adding Phone Numbers**: Use the `addPhoneNumber` method of the `Telephone` class to add a new phone number.
 
-1. Install Node.js if not already installed.
-2. Clone this repository to your local machine.
-3. Navigate to the project directory.
-4. Run `node main.js` to execute the code.
-5. Check the console output for the results of adding, dialing, and removing phone numbers.
+2. **Removing Phone Numbers**: Use the `removePhoneNumber` method of the `Telephone` class to remove a phone number.
 
-## Code Structure
+3. **Dialing Phone Numbers**: Use the `dialPhoneNumber` method of the `Telephone` class to dial a phone number. Only phone numbers that have been added can be dialed. Observers will be notified when a phone number is dialed.
 
-- **`Telephone` Class**: Defines the telephone system with methods to add, remove, and dial phone numbers, along with observer management.
-- **`Observer` Class**: Represents a generic observer with an update method.
-- **`SpecialObserver` Class**: Represents a special type of observer with a custom update method.
-- **`main.js`**: Entry point of the program where instances of classes are created and methods are called.
+## Example
 
-## Getting Started
+```javascript
+const telephone = new Telephone();
+const observer1 = new Observer();
+const observer2 = new SpecialObserver();
 
-To get started with this project, simply clone the repository and explore the code. You can also experiment with adding more functionality or extending the project according to your requirements.
+telephone.addObserver(observer1);
+telephone.addObserver(observer2);
 
-## Acknowledgements
+telephone.addPhoneNumber("1234567890");
+telephone.dialPhoneNumber("1234567890");
+// Output:
+// Phone number dialed: 1234567890
+// Now Dialling 1234567890
 
-This project was developed as part of the Learnable Internship Program by GenesysTechHub. Special thanks to the mentors and instructors for their guidance and support throughout the program.
+telephone.removePhoneNumber("1234567890");
+telephone.dialPhoneNumber("1234567890");
+// Output: Phone number not found.
+```
+
+## UI Integration
+
+For a graphical user interface (GUI) aspect of the project, please refer to the [Telephone Observer System UI](https://github.com/Ozioma45/Telephone_Observer_System) repository. You can view the live preview [here](https://ozioma45.github.io/Telephone_Observer_System/).
+
+## Contributing
+
+Contributions to this console application are welcome! Fork the repository, make your changes, and create a pull request.
 
 ## License
 
