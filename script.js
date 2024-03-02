@@ -67,7 +67,25 @@ function displayObservers(telephone) {
     const row = observersTable.insertRow();
     const cell = row.insertCell();
     cell.appendChild(document.createTextNode(observer));
+
+    // Create a button element for deleting the observer
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    // Add an event listener to the delete button to remove the observer
+    deleteButton.addEventListener("click", function () {
+      removeObserver(telephone, observer);
+      displayObservers(telephone); // Update the displayed observers after deletion
+    });
+
+    // Append the delete button to the cell
+    cell.appendChild(deleteButton);
   });
+}
+
+// Function to remove an observer
+function removeObserver(telephone, observer) {
+  telephone.removeObserver(observer);
 }
 
 function dialPhoneNumber(telephone, number) {
