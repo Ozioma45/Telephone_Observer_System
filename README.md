@@ -2,6 +2,8 @@
 
 This project is a demonstration of implementing the observer design pattern in a telephone package. It allows users to interact with a telephone system through various functionalities such as adding, removing, and dialing phone numbers. Additionally, it maintains a list of observers that are notified whenever a phone number is dialed.
 
+- qaYou can view the live preview [here](https://ozioma45.github.io/Telephone_Observer_System/).
+
 ## Features
 
 - **AddPhoneNumber**: Add a new phone number to the telephone system.
