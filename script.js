@@ -1,5 +1,5 @@
 import { Telephone, Observer, SpecialObserver } from "./main.js";
-
+const telephone = new Telephone();
 const addObserver = document.getElementById("addObserver");
 
 addObserver.addEventListener("click", function () {
@@ -23,12 +23,12 @@ function displayPhoneNumbers(telephone) {
     const cell = row.insertCell();
     cell.appendChild(document.createTextNode(number));
 
-    // Create a button element
-    const button = document.createElement("button");
-    button.textContent = "Dial";
+    // Create a button element for dialing
+    const dialButton = document.createElement("button");
+    dialButton.textContent = "Dial";
 
-    // Add an event listener to the button to dial the phone number
-    button.addEventListener("click", function () {
+    // Add an event listener to the dial button to dial the phone number
+    dialButton.addEventListener("click", function () {
       if (number !== "") {
         dialPhoneNumber(telephone, number);
       } else {
@@ -36,9 +36,27 @@ function displayPhoneNumbers(telephone) {
       }
     });
 
-    // Append the button to the cell
-    cell.appendChild(button);
+    // Append the dial button to the cell
+    cell.appendChild(dialButton);
+
+    // Create a button element for deleting the phone number
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    // Add an event listener to the delete button to remove the phone number
+    deleteButton.addEventListener("click", function () {
+      removePhoneNumber(telephone, number);
+      displayPhoneNumbers(telephone); // Update the displayed phone numbers after deletion
+    });
+
+    // Append the delete button to the cell
+    cell.appendChild(deleteButton);
   });
+}
+
+// Function to remove a phone number
+function removePhoneNumber(telephone, number) {
+  telephone.removePhoneNumber(number);
 }
 
 function displayObservers(telephone) {
@@ -61,8 +79,6 @@ function dialPhoneNumber(telephone, number) {
     alert("Phone number not found.");
   }
 }
-
-const telephone = new Telephone();
 
 const addPhoneNumber = document.getElementById("addPhoneNumber");
 
